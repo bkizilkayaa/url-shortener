@@ -1,11 +1,13 @@
 package com.burak.urlshortener.controller;
 
+import com.burak.urlshortener.model.Url;
 import com.burak.urlshortener.request.UrlCreateRequest;
 import com.burak.urlshortener.response.UrlCreateResponse;
 import com.burak.urlshortener.service.UrlService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -29,6 +31,12 @@ public class UrlController {
     @PostMapping()
     public ResponseEntity<UrlCreateResponse> generateShortLink(@RequestBody UrlCreateRequest urlCreateRequest){
         return new ResponseEntity<>(urlService.shortUrlGenerate(urlCreateRequest),CREATED);
+    }
+
+    @GetMapping("/{shortLink}")
+    public RedirectView redirectToOriginalUrl(@PathVariable String shortLink){
+        Url url= urlService.getUrlByShortLink(shortLink);
+        return new RedirectView("https://"+url.getOriginalUrl());
     }
 
     @DeleteMapping("/{shortlink}")
