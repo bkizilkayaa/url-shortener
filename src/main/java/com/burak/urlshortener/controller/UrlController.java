@@ -16,6 +16,7 @@ import java.util.Optional;
 import static org.springframework.http.HttpStatus.*;
 
 @RestController
+@CrossOrigin
 @RequestMapping("api/v1/url")
 public class UrlController {
     private final UrlService urlService;

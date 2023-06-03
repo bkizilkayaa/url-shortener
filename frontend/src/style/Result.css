@@ -1,0 +1,29 @@
+.result-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+    width: 30%;
+    background-color: #493fb6;
+    height: 10vh;
+    overflow: auto;
+    border-radius: 50px;
+}
+.result-container img{
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    background-color: aliceblue;
+    border-radius: 4rem;
+}
+.h3-result{
+    color: aqua;
+}
+a{
+    color:aqua;
+}
+.urlReady{
+    margin-bottom: 20px;
+    color: green;
+}

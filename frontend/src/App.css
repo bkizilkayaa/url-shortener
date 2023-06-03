@@ -1,38 +1,63 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App{
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  font-family: var(--font-raleway);
+  padding: 1rem;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 85%;
+  padding: 20px;
+  margin: 20px;
+  background-color: #dfdfcf;  
+  border-radius: 8px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 1);
+} 
+.container .h1-grad{
+  font-size:25px;
+  letter-spacing: 0.9px;
+  background: linear-gradient(
+    90deg,
+    rgb(2, 118, 43) 0%,
+    rgba(56, 9, 9, 0.8) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
 }
 
-.App-link {
-  color: #61dafb;
+:root {
+  --font-roboto: "Roboto Slab", serif;
+  --font-raleway: "Raleway", sans-serif;
+}
+.header{
+  margin: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+body {
+  font-family: var(--font-roboto);
+  background-color: #2242c455;
+}
+@media screen and (max-width: 400px) {
+  .app {
+    padding: 4rem 1rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+button{
+  font-size: 1rem;
+  font-family: var(--font-raleway);
+  font-weight: 500;
 }
