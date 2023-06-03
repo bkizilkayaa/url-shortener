@@ -26,12 +26,8 @@ public class UrlController {
         return new ResponseEntity<>(urlService.getAllUrl(), OK);
     }
 
-    @PostMapping("/{originalurl}")
-    public ResponseEntity<UrlCreateResponse> generateShortLink(@PathVariable String originalurl,
-                                                               @RequestParam Optional<LocalDateTime> expireDate){
-        UrlCreateRequest urlCreateRequest=new UrlCreateRequest();
-        urlCreateRequest.setOriginalUrl(originalurl);
-        urlCreateRequest.setExpireDate(expireDate.orElse(null));
+    @PostMapping()
+    public ResponseEntity<UrlCreateResponse> generateShortLink(@RequestBody UrlCreateRequest urlCreateRequest){
         return new ResponseEntity<>(urlService.shortUrlGenerate(urlCreateRequest),CREATED);
     }
 

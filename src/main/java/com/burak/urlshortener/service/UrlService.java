@@ -33,7 +33,7 @@ public class UrlService {
         url.setCreationDate(LocalDateTime.now());
         url.setExpireDate(
                 urlCreateRequest.getExpireDate() == null ?
-                        LocalDateTime.MAX : urlCreateRequest.getExpireDate());
+                        (LocalDateTime.now().plusDays(3)) : urlCreateRequest.getExpireDate());
         urlRepository.save(url);
         return urlToResponseDto(url);
         //url entity si oluşturup, oluşturulduğuna dair bir geri dönüş yapar
