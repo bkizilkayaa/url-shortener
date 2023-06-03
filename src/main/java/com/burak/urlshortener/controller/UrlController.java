@@ -36,11 +36,23 @@ public class UrlController {
     @GetMapping("/{shortLink}")
     public RedirectView redirectToOriginalUrl(@PathVariable String shortLink){
         Url url= urlService.getUrlByShortLink(shortLink);
-        return new RedirectView("https://"+url.getOriginalUrl());
+        if(url.getOriginalUrl().startsWith("http://")) //secure degil, devam
+            return new RedirectView(url.getOriginalUrl());
+        else if(url.getOriginalUrl().startsWith("https://")) //secure baglantiysa secure git
+            return new RedirectView(url.getOriginalUrl());
+        else //default olarak secure'a gitmeyi dene.
+            return new RedirectView("https://"+url.getOriginalUrl());
     }
 
     @DeleteMapping("/{shortlink}")
-    public void deleteUrl(@PathVariable String shortlink){
-        urlService.deleteUrl(shortlink);
+    public ResponseEntity<?> deleteUrl(@PathVariable String shortlink){
+        Url urlInstance=urlService.getUrlByShortLink(shortlink);
+        if(urlInstance!=null) {
+            urlService.deleteUrl(shortlink);
+            return new ResponseEntity<>(null, OK);
+        }
+        else{
+            return new ResponseEntity<>("there is no shortlink like that", BAD_REQUEST);
+        }
     }
 }

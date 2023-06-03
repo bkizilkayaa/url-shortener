@@ -23,7 +23,6 @@ public class UrlService {
     public UrlService(UrlRepository urlRepository) {
         this.urlRepository = urlRepository;
     }
-
     public UrlCreateResponse shortUrlGenerate(UrlCreateRequest urlCreateRequest){
         //original url ve expiration date i geldi request olarak
         //original url e gore short linki SHA-256 Algoritmasıyla üretiyorum
