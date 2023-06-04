@@ -31,11 +31,13 @@
   }
   
   .card-title {
+    color: aqua;
     font-size: 20px;
     margin-bottom: 10px;
   }
   
   .card-text {
+    color: wheat;
     font-size:17px;
     margin-bottom: 10px;
   }

@@ -16,7 +16,7 @@ function App() {
           <div className='container'>
             <h2 className='h1-grad'>URL Shortener is a free tool that allows to create a shortened link making it easy to share</h2>
             <br/>
-            <h2>If you want more, try premium version!</h2>
+            <h2>&#8987; Premium version &#128064; Soon!</h2>
             <br/>
             <h2>Contact me : burak@gmail.com</h2>
           </div>

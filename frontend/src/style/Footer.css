@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+.ft{
+    background-color: #0C0F1E30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    --font-roboto: "Roboto Slab", serif;
+    --font-raleway: "Raleway", sans-serif;
+}
+.ft-h2{
+    color: white;
+    opacity: .7;
+    font-family: var(--font-raleway);
+    padding: 10px;
+}
+.contentUp{
+    opacity: .7;
+    font-size: x-large;
+    font-family: var(--font-raleway);
+    margin-left: auto;
+    padding-right: 1rem;
+    color: white;
+}
+.contentUp img{
+    width: 45px;
+    height: auto;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+.about img{
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    margin: 7px;
+    border-radius: 10px;
+    transition: transform 0.8s ease-in-out;
+}
+.about img:hover{
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2px, -2px); }
+    50% { transform: translate(2px, 2px); }
+    75% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0, 0); }
+  }
