@@ -1,8 +1,12 @@
-import React,{useEffect, useState} from 'react';
+import React,{useState} from 'react';
+//style
 import '../style/CreateUrl.css';
+//icons
 import SearchIcon from '../img/search.svg';
 
+//components
 import Result from './Result';
+import ErrorResult from './ErrorResult'
 
 const CreateUrl = () => {
     const[longUrl,setLongUrl]=useState(""); 
@@ -36,21 +40,16 @@ const CreateUrl = () => {
         }
       };
 
-      const getUrlList = ()=>{
-        fetch(API_URL)
-        .then(res => {
-            if (res.ok && res.status === 200) {
-              return res.json();
-            }
-          })
-          .then(data => {
-            console.log(data);
-          })
-          .catch(err => console.log(err));
-      }
+      const checkTheUrlIfItsTrue = () => {
+        const validDomains = 
+        [".com", ".org", ".tr", ".net", ".co",
+         ".io", ".ai", ".istanbul", ".shop", ".info"];
+        return validDomains.some(domain => longUrl.includes(domain));
+      };
+      
   return (
     <>
-        <div className='searchBar'>
+    <div className='searchBar'>
       <input
         onChange={(e) => setLongUrl(e.target.value)}
         placeholder="Enter long url here"
@@ -58,10 +57,11 @@ const CreateUrl = () => {
       <img src={SearchIcon}
       alt="search"
       onClick={()=>{
-        createShortenerUrl();
+        if(checkTheUrlIfItsTrue())
+          createShortenerUrl();
       }}
      />
-    </div>
+    </div>  
     {(isRequestSuccess && successData!=null) && <Result data={successData}/>}
     </>
   );

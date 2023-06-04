@@ -1,0 +1,6 @@
+.urlReady{
+    display: flex;
+    text-align: left;
+    justify-content: left;
+    flex-direction: row;
+}

@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    flex-direction: row;
     align-content: stretch;
     width: 30%;
     background-color: #493fb6;
@@ -26,4 +27,9 @@ a{
 .urlReady{
     margin-bottom: 20px;
     color: green;
+}
+.qr-code{
+    box-shadow: 0 11px 10px rgba(0, 0, 0, 1);
+    padding: 20px;
+    margin: 20px;
 }
