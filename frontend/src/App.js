@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import './App.css';
-import CreateUrl from './components/Search';
-
+import CreateUrl from './components/CreateUrl';
+import Info from './components/Info';
 function App() {
 
   return (
@@ -19,7 +19,9 @@ function App() {
             <h2>If you want more, try premium version!</h2>
             <br/>
             <h2>Contact me : burak@gmail.com</h2>
-
+          </div>
+          <div className='container-info'>
+            <Info/>
           </div>
       </div>   
   );

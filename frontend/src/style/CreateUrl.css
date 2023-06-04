@@ -14,6 +14,7 @@ input{
     border-radius: 2rem;
     outline: none;
     color: #fffefe;
+    width: 85%;
     background: #003652;
 }
 .searchBar::placeholder{
