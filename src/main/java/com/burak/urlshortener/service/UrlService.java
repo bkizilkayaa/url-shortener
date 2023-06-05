@@ -79,7 +79,6 @@ public class UrlService {
         urlCreateResponse.setExpireDate(url.getExpireDate());
         return urlCreateResponse;
     }
-
     private Url requestToUrlObject(UrlCreateRequest urlCreateRequest){
         Url url=new Url();
         url.setShortUrl(generateHashValue(urlCreateRequest.getOriginalUrl()));
@@ -90,7 +89,4 @@ public class UrlService {
                         (LocalDateTime.now().plusDays(3)) : urlCreateRequest.getExpireDate());
         return url;
     }
-
-
-
 }
