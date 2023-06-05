@@ -12,6 +12,7 @@ const CreateUrl = () => {
     const[longUrl,setLongUrl]=useState(""); 
     const[isRequestSuccess,setIsRequestSuccess]=useState(false);
     const[successData,setSuccessData]=useState([]);
+    const [searchClicked, setSearchClicked] = useState(false);
     const API_URL='http://localhost:8080/api/v1/url';
 
     const createShortenerUrl = async () => {
@@ -47,24 +48,41 @@ const CreateUrl = () => {
         return validDomains.some(domain => longUrl.includes(domain));
       };
       
+      const handleSearchIconClick = () => {
+        if (checkTheUrlIfItsTrue()) {
+          createShortenerUrl();
+          setSearchClicked(true);
+        }
+       else {
+        setSearchClicked(true);
+        setIsRequestSuccess(false);
+      }
+      };
+    
   return (
     <>
-    <div className='searchBar'>
-      <input
-        onChange={(e) => setLongUrl(e.target.value)}
-        placeholder="Enter long url here"
-      />
-      <img src={SearchIcon}
-      alt="search"
-      onClick={()=>{
-        if(checkTheUrlIfItsTrue())
-          createShortenerUrl();
-      }}
-     />
-    </div>  
-    {(isRequestSuccess && successData!=null) && <Result data={successData}/>}
+          <div className='searchBar'>
+            <input
+              onChange={(e) => setLongUrl(e.target.value)}
+              placeholder="Enter long url here"
+            />
+            <img
+              src={SearchIcon}
+              alt="search"
+              onClick={handleSearchIconClick}
+            />
+          </div>
+            {searchClicked && (
+             isRequestSuccess ? (
+            (successData != null) ? (
+              <Result data={successData} />
+            ) : null
+          ) : (
+            <ErrorResult url={longUrl} />
+          )
+        )}
     </>
   );
 }
-
-export default CreateUrl;
+    
+    export default CreateUrl;

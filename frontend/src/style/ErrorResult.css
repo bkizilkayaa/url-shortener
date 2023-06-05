@@ -1,6 +1,33 @@
-.urlReady{
+.errorReady{
     display: flex;
-    text-align: left;
-    justify-content: left;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    color: brown;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.error-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
+    align-content: stretch;
+    width: 30%;
+    background-color: #493fb6;
+    height: 10vh;
+    overflow: auto;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+.h3-error{
+    font-size: 2rem;
+    color: tan;
+}
+.errorImg{
+    width: 50px;
+    padding: 2px;
+    margin-left: 20px;
+    padding: 2px;
 }

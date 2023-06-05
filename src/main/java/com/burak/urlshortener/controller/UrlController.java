@@ -4,14 +4,11 @@ import com.burak.urlshortener.model.Url;
 import com.burak.urlshortener.request.UrlCreateRequest;
 import com.burak.urlshortener.response.UrlCreateResponse;
 import com.burak.urlshortener.service.UrlService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.*;
 
@@ -37,12 +34,13 @@ public class UrlController {
     @GetMapping("/{shortLink}")
     public RedirectView redirectToOriginalUrl(@PathVariable String shortLink){
         Url url= urlService.getUrlByShortLink(shortLink);
-        if(url.getOriginalUrl().startsWith("http://")) //secure degil, devam
-            return new RedirectView(url.getOriginalUrl());
-        else if(url.getOriginalUrl().startsWith("https://")) //secure baglantiysa secure git
-            return new RedirectView(url.getOriginalUrl());
-        else //default olarak secure'a gitmeyi dene.
-            return new RedirectView("https://"+url.getOriginalUrl());
+        if(!(url.getOriginalUrl().startsWith("http://") ||
+            url.getOriginalUrl().startsWith("https://"))){
+            return new RedirectView("https://"+url.getOriginalUrl()); //yoksa default olarak secure ekler.
+        }
+        else{
+            return new RedirectView(url.getOriginalUrl()); // herhangi bi http method varsa o sekilde devam.
+        }
     }
 
     @DeleteMapping("/{shortlink}")

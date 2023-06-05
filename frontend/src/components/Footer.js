@@ -5,6 +5,7 @@ import '../style/Footer.css';
 import buttonImg from '../img/uptoTop.png';
 import githubIcon from '../img/github.png';
 import linkedinIcon from '../img/linkedin.png';
+import instagramIcon from '../img/instagram.png';
 
 const Footer = () => {
 
@@ -21,13 +22,17 @@ const Footer = () => {
     const handleRedirectToLinkedin = ()=>{
         window.open("https://linkedin.com/in/burakkizilkaya/",'_blank');
     }
+    const handleRedirectToInstagram=()=>{
+      window.open("https://instagram.com/bkizilkayaa",'_blank');
+    }
   return (
     <div className='ft'>
             <h3 className='ft-h2'> URL Shortener App. developed by Burak Kizilkaya</h3>
-            <h3 className='ft-h2'> You can contact me below</h3>
+            <h3 className='ft-h2'> Check out my social</h3>
             <div className='about'>
-                <img src={githubIcon}  onClick={handleRedirectToGithub}/>
-                <img src={linkedinIcon}  onClick={handleRedirectToLinkedin} />
+                <img src={githubIcon}  alt='github' onClick={handleRedirectToGithub}/>
+                <img src={linkedinIcon} alt='linkedin' onClick={handleRedirectToLinkedin} />
+                <img src={instagramIcon} alt='instagram' onClick={handleRedirectToInstagram} />
             </div>
             <div className='contentUp'>
                 <img src={buttonImg} onClick={handleScrollToTop} alt='Up to top'/>
