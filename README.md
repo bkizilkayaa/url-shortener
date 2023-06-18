@@ -1,4 +1,4 @@
-<h1 style="color:aqua"> URL Shortener </h1>
+<h1> URL Shortener </h1>
 
 ## **This is a full-stack project where users can easily create shortened and encrypted URLs.**
 
@@ -7,25 +7,27 @@
 <br/>
 <br/>
 
-https://github.com/bkizilkayaa/url-shortener/assets/88281419/d3bf286b-2187-4e24-89d2-998dd109e2e0
+
+https://github.com/bkizilkayaa/url-shortener/assets/88281419/94f0a186-45e2-4d41-9b25-6618a6b0fa1a
 
 <br/>
-<img src='./img/expl1.png'/>
+<img src='frontend/src/img/expl1.png'/>
 <br/>
-<img src='./img/expl2.png'/>
+<img src='frontend/src/img/expl2.png'/>
 <br/>
-<br/>
-
-<h2 style="color:aqua"> If there is no valid domain input:</h2>
 <br/>
 
-<img src='./img/expl3.png'/>
+## If there is no valid domain input:
 
 <br/>
 
-_<h1 style="color:green"> **API Explanation** </h1>_
+<img src='frontend/src/img/expl3.png'/>
 
-<h2 style="color:yellow"> 1-) Get All Shortened URLs </h2>
+<br/>
+
+# **API Explanation** 
+
+## 1-) Get All Shortened URLs 
 
 ### Method: GET
 
@@ -39,10 +41,10 @@ _<h1 style="color:green"> **API Explanation** </h1>_
 + localhost:8080/api/v1/url
 ```
 
-<img src='./img/getMethodExample.png'/>
+<img src='frontend/src/img/getMethodExample.png' style="width:500px"/>
 <br/> <br/>
 
-<h2 style="color:yellow"> 2-) Generate Shortened URL </h2>
+## 2-) Generate Shortened URL 
 
 ### Method: POST
 
@@ -58,7 +60,7 @@ _<h1 style="color:green"> **API Explanation** </h1>_
 
 <br/>
 
-<h2 style="color:yellow"> 3-) Get Original URL </h2>
+## 3-) Get Original URL
 
 ### Method: GET
 
@@ -74,7 +76,7 @@ _<h1 style="color:green"> **API Explanation** </h1>_
 
 <br/>
 
-<h2 style="color:yellow"> 4-) Delete Shortened URL </h2>
+## 4-) Delete Shortened URL
 
 ### Method: DELETE
 
@@ -89,3 +91,5 @@ _<h1 style="color:green"> **API Explanation** </h1>_
 ```
 
 <br/>
+
+#### This project is running on localhost. The video shows a domain like "shortener.com" but that domain does not belong to me. I just added it that way to make it look nice. If I buy the domain one day, the url will look like that. 
